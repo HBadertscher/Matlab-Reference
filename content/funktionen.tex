@@ -1,0 +1,96 @@
+\subsection{Allgemeine Mathematische Funktionen}
+
+\begin{tabular}{lll}
+    \textbf{Symbol} & \textbf{Matlab} & \textbf{Beschreibung}
+  \\
+     $ ln(x)dx $ &
+    \texttt{diff(log(x),x)} &
+  \\
+    $ |x| $ &
+    \texttt{abs(x)} &
+    Betrag
+  \\
+    &
+    \texttt{angle(x)} &
+    Argument, Phase
+  \\
+    &  
+    \texttt{ceil(x)} & 
+    Runden (grösser oder gleich) zur nächsten Zahl
+  \\
+    &
+    \texttt{floor(x)} &
+    Runden (kleiner oder gleich) zur nächsten Zahl
+  \\
+    &
+    \texttt{round(x)} &
+    Rundung zur nächsten ganzen Zahl 
+  \\
+    &
+    \texttt{conj(x)} &
+    Konjugiert komplexe Zahl
+  \\
+    $ e^x $ &
+    \texttt{exp(x)} &
+    Exponentioalfunktion 
+  \\
+    $ ln(x) $ &
+    \texttt{log(x)} &
+    Natürlicher Logarithmus 
+  \\
+    $ log(x) $ &
+    \texttt{log10(x)} &
+    Zehnerlogarithmus
+  \\
+    &  
+    \texttt{imag(x)} &
+    Imaginärteil einer Zahl
+  \\
+    &
+    \texttt{real(x)} &
+    Realteil einer Zahl
+  \\
+    $ \frac{x}{y} $ &
+    \texttt{rem(x,y)} &
+    Ganzzahliger Rest von 
+  \\
+    $ \sqrt{x} $ &
+    \texttt{sqrt(x)} &
+    Quadratwurzel
+  \\
+    $ x! $ &
+    \texttt{factorial(x)} &
+    Fakultät
+  \\
+    $ \qquad{n \choose k} $ &
+    \texttt{nchoosek(n,k)} &
+    Binomialkoeffizient
+  \\
+    $ X_0 = \mu $ &
+    \texttt{mean(Array)} &
+    Linearer Mittelwert
+  \\
+    &
+    \texttt{var(Array)} &
+    Varianz
+  \\
+    $ \sigma $ &
+    \texttt{std(Array)} &
+    Standardabweichung
+  \\
+    $ X^2 $ &
+    \texttt{mean(Array.\hoch 2)} &
+    Quadratischer Mittelwert
+  \\
+    &
+    \texttt{[C, D] = xcorr(A, B)} &
+    Auto- bzw. Kreuzkorelation
+  \\
+    $ \frac{2}{\sqrt{\pi}} \cdot \int \limits_0^x e^{-t^2}dt $ &
+    \texttt{erf(x)} &
+    Errorfunktion
+  \\
+    $ \frac{2}{\sqrt{\pi}} \cdot \int \limits_x^\infty e^{-t^2}dt = 1 - erf(x) $ &
+    \texttt{erfc(x)} &
+    Komplementäre Errorfunktion
+\end{tabular}

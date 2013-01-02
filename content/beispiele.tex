@@ -1,0 +1,80 @@
+%==============================================================================
+\subsection{Lineares Gleichungssystem}
+Ein Gleichungssystem der Form $ Ax = b $ wird folgendermassen gelöst: \newline
+\verb?x = A \ b? \newline
+  $ \begin{array}{ccccccc}
+   x & + & y & = & 62 & ~~~~~~~~~ & x = 46 \\
+   x & - & 4y & = & -18 & & y = 16
+  \end{array} $
+\hspace{5mm}
+\hspace{10mm}
+\verb?x = [1 1; 1 -4] \ [62; -18]? \hspace{5mm} \verb?x = [46; 16]?
+
+%==============================================================================
+\subsection{Polynomdivision}
+Ein und Ausgegeben wird jeweils nur ein Array mit den Koeffizienten des Polynoms
+\newline
+$$ \frac{x^4 - 3x^3 + 3x^2 - x}{x-1} = x^3 - 2x^2 + x $$
+\verb?R = deconv([1 -3 3 -1 0],[1 -1])? \hspace{5mm} \verb?R = [1 -2 1 0]?
+
+%==============================================================================
+\subsection{Laplace}
+$$ f(t) = -1.25 + 3.5t e^{-2t} + 1.25 e^{-2t} ~~~ \rightarrow ~~~
+F(s) = \frac{s-5}{s(s+2)^2} $$
+\verb?f = -1.25 + 3.5 * t * exp(-2*t) + 1.25 * exp(-2*t)? \newline
+\verb?F = simplify(laplace(f,t,s))? $ ~~ \rightarrow ~~ $
+\verb?F = (s - 5)/(s*(s + 2)?\texttt{\hoch} \verb?2)?
+
+%==============================================================================
+\subsection{Inverse Laplace}
+$$ F(s) = \frac{s-5}{s(s+2)^2} ~~~ \rightarrow ~~~ f(t) = -1.25 + 3.5t e^{-2t} +
+1.25 e^{-2t} $$
+\verb?F = (s-5)/(s*(s+2)?\texttt{\hoch}\verb?2)? \hspace{5mm}
+\verb?simplify(ilaplace(F))?
+
+%==============================================================================
+\subsection{Partialbruchzerlegung}
+\begin{minipage}{10cm}
+  \begin{tabular}{ll}
+    \verb?b = [4 12]? & Zählerpolynom \\
+    \verb?a = [1 3 2 0]? & Nennerpolynom \\
+    \verb?[r,p,k] = residue(b,a)? & Partialbruchzerlegung \\
+    \verb?r = [2; -8; 6]? & Residuen \\
+    \verb?p = [-2; -1; 0]? & Pole \\
+    \verb?k = []? & Restterm der Polynomdivision
+  \end{tabular} \newline
+  $ \rightarrow ~~ \frac{r_n}{x - p_n} + \ldots + \frac{r_1}{x - p_1} +
+  \frac{r_0}{x - p_0} $
+\end{minipage}
+\begin{minipage}{8cm}
+  $$ \frac{b}{a} = \frac{4x -12}{x^3 + 3x^2 + 2x} $$
+  \newline
+  $$ \frac{2}{x+2} + \frac{-8}{x+1} + \frac{6}{x} + k$$
+\end{minipage}
+
+
+%==============================================================================
+\subsection{LTI-Systeme}
+$$ H(s) = \frac{s \frac{L}{R}}{s^2 LC + s\cdot\frac{L}{R} + 1} ~~~ \Rightarrow
+~~~ \frac{1s + 0}{1s^2 + 2s + 1} $$ 
+$ R = 1\Omega ~~~~ L = 1H ~~~~ C = 1F $
+$~~~~\rightarrow~~~~$
+\verb?H = tf([1 0], [12 1])?
+ \newline
+
+\begin{tabular}{ll}
+    \textbf{Bode-Diagramm} &
+    \verb?bode(H)?
+  \\
+    \textbf{Impulsantwort} &
+    \verb?impulse(H)?
+  \\
+    \textbf{Sprungantwort} &
+    \verb?step(H)?
+  \\
+    \textbf{Nullstellen- / Sprungstellendiagramm} &
+    \verb?pzmap(H)?
+  \\
+    \textbf{LTI-Eigenschftsdiagramm} &
+    \verb?ltiview(H)?
+\end{tabular}

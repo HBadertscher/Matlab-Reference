@@ -1,0 +1,95 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Standard projektübergreifender Header für
+% - Makros 
+% - Farben
+% - Mathematische Operatoren
+%
+% DORT NUR ERGÄNZEN, NICHTS LÖSCHEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{../style/header.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dokumentinformationen %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=true,      % window fit to page when opened
+    pdfstartview={FitW},    % fits the width of the page to the window
+    pdftitle={Matlab Befehlsreferenz},    % title
+    pdfauthor={Philipp Kälin},     % author
+    pdfkeywords={Matlab} {Befehlsreferenz}, % list of keywords
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+
+%%%%%%%%%%%%%%
+% Titelseite %
+%%%%%%%%%%%%%%
+
+% \makeatletter
+% \def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+% \renewcommand{\maketitle}{\begin{titlepage}
+%     \vspace{10cm} \par
+%     \hrule height 4pt
+%     \begin{flushleft}
+%       \huge \@title
+%     \end{flushleft}
+%     \hrule height 4pt
+%     \par
+%     \begin{flushright}
+%       \LARGE \@author \par \newline \newline
+%       \LARGE \@date \par \newline
+%     \end{flushright}
+%     
+%     \vfill
+%     
+%     \hrule height 1.75pt \vspace{1mm}
+%     This work is licensed under a \newline
+%     \begin{tabular}{ll}
+%         \multirow{3}{*}{\includegraphics[height=31px]{88x31.png}} &
+%         %\mulrirow{2}{*}{} &
+%         \textit{Creative Commons Attribution-NonCommercial-ShareAlike 3.0
+%         Unported License.}
+%       \\
+%         &
+%         \url{http://creativecommons.org/licenses/by-nc-sa/3.0/}
+%     \end{tabular}
+%   \end{titlepage}%
+%   \setcounter{footnote}{0}%
+% }
+% \makeatother
+
+
+%%%%%%%%%%%%
+% Dokument %
+%%%%%%%%%%%%
+\begin{document}
+  \input{title.tex}
+
+\section{Systemspezifische Befehle}
+	\input{systemspezifischeBefehle.tex}
+
+\section{Funktionen}
+  \input{funktionen.tex}
+  \input{mathematischeFunktionen.tex}
+
+\section{Arrays}
+  \input{arrays.tex}
+  
+\section{Plotten}
+  \input{plotten.tex}
+  
+\section{Programmier-Syntaxe}
+  \input{programmieren.tex}
+
+\section{Beispiele}
+  \input{beispiele.tex}
+
+\end{document}
