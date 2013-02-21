@@ -1,0 +1,48 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Standard projektübergreifender Header für
+% - Makros 
+% - Farben
+% - Mathematische Operatoren
+%
+% DORT NUR ERGÄNZEN, NICHTS LÖSCHEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+\input{header/zusammenfassung}
+\input{header/hyperref}
+\input{header/listings}
+
+\usepackage{graphicx}		% Grafiken
+\usepackage{color}			% Farben
+\usepackage{lastpage}		% Seite x von y
+\newcommand{\hoch}{$^{\wedge}$}
+
+
+\title{Matlab Befehlsreferenz}
+\author{Philipp Kälin, Hannes Badertscher}
+
+%%%%%%%%%%%%
+% Dokument %
+%%%%%%%%%%%%
+\begin{document}
+  \input{sections/title.tex}
+
+\section{Systemspezifische Befehle}
+	\input{sections/systemspezifischeBefehle.tex}
+
+\section{Funktionen}
+  \input{sections/funktionen.tex}
+  \input{sections/mathematischeFunktionen.tex}
+
+\section{Arrays}
+  \input{sections/arrays.tex}
+  
+\section{Plotten}
+  \input{sections/plotten.tex}
+  
+\section{Programmier-Syntaxe}
+  \input{sections/programmieren.tex}
+
+\section{Beispiele}
+  \input{sections/beispiele.tex}
+
+\end{document}
