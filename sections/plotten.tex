@@ -1,12 +1,58 @@
-\begin{tabularx}{\textwidth}{p{7cm} p{11cm}}
-    \texttt{hist(Array, [min, step, max])} &
-    Erstellt eine Histogramm aus den Werten eines Arrays.
-  \\
-    \texttt{plot(x,y)} &
-    Erstellt einen normalen x-y Plot
-  \\
-    \texttt{stem(f)} &
-    Erstellt einen Plot bei dem die Werte als horizontale Pfeile dargestellt
-    werden
-\end{tabularx}
-    
+\subsection{2D-Graphen}
+\begin{tabular}{ll}
+	\texttt{plot(x,y)} & Erstellt einen normalen $x$-$y$ Plot. \\
+	\texttt{semilogx(x,y)} & Gleich wie plot, aber $x$-Achse logarithmisch. \\
+	\texttt{semilogy(x,y)} & Gleich wie plot, aber $y$-Achse logarithmisch. \\
+	\texttt{loglog(x,y)} & Gleich wie plot, aber $x$- und $y$-Achse logarithmisch. \\	
+	\texttt{scatter(x,y)} & Stellt nur die einzelnen Punkte ($x$,$y$) dar. \\
+	\texttt{stem(x,y)} & Erstellt einen Plot bei dem die Werte als horizontale Balken dargestellt werden. \\
+	\texttt{stairs(x,y)} & Erstellt eien Treppenkurve zwischen den y-Werten. \\
+	\texttt{bar(x,y)} & Erstellt ein Balkendiagramm aus $x$ und $y$.\\
+	\texttt{barh(x,y)} & Erstellt ein horizontales Balkendiagramm. \\
+	\texttt{area(x,y)} & Erstellt ein Diagramm, in welchem die Fläche unter der Kurve farbig markiert ist. \\
+	\texttt{comet(x,y)} & Erstellt einen $x$-$y$ Plot, welcher animiert, mit Kometenschweif gezeichnet wird. \\
+	\texttt{pie(x)} & Erstellt ein Pie-Chart aus den Daten in $x$. \\
+	\texttt{pie3(x)} & Gleich wie \texttt{pie}, doch das Pie-Chart wird in 3D dargestellt. \\
+	\texttt{histogram(x,n)} & Erzeugt ein Histogramm der Werte in $x$. \\ & $n:$ Anzahl Klassen oder Array mit der Aufteilung der Klassen. \\
+\end{tabular}
+
+\subsection{3D-Graphen}
+\textbf{Vorbereitung:} \\
+\begin{tabular}{lll}
+	1) & \texttt{[x,y] = meshgrid([min:step:max],[min:step:max]);} & Raster aus den Vektoren xgv,ygv erstellen. \\
+	2) & \texttt{z = f(x,y);} & Funktion in Abhängigkeit von x,y erstellen. \\
+\end{tabular} \\
+
+\textbf{Graphen:} \\
+\begin{tabular}{ll}
+	\texttt{surf(x,y,z)} & Erzeugt einen 3D-Oberflächen-Plot\\
+	\texttt{contour(x,y,z)} & Erzeugt einen 2D-Höhenlinien-Plot\\
+	\texttt{contour3(x,y,z)} & Gleich wie \texttt{contour}, jedoch sind die Höhenlinien in 3D, auf der entsprechenden Höhe. \\
+	\texttt{surfc(x,y,z)} & Kombination aus \texttt{surf} und \texttt{contour} im selben Plot. \\
+	\texttt{waterfall(x,y,z)} & Erzeugt einen 3-D Plot im Wasserfall-Design \\
+	\texttt{stem3(x,y,z)} & Erzeugt einen Plot analog \texttt{stem}, aber in 3D \\
+	\texttt{plot3(x,y,z)} & 3D-Pendant zu plot. Erzeugt den Punkten ($x,y,z$) einen 3D-Linien-Plot. \\
+	\texttt{scatter3(x,y,z)} & Stellt die Punkte ($x,y,z$) einzeln dar. \\
+\end{tabular}
+
+
+\subsection{Polare Graphen}
+\begin{tabular}{ll}
+	\texttt{polar(theta,rho)} & Erzeugt einen polaren Plot aus dem Winkel \texttt{theta} und dem zugehörigen Radius \texttt{rho} \\
+	\texttt{compass(u,v)} & Zeichnet Zeiger vom Ursprung zu den Punkten ($u,v$) in die polare Ebene ein. \\
+	\texttt{compass(z)} & Zeichnet komplexe Zeiger in der polaren Ebene. \\
+	\texttt{rose(t,n)} & Erzeugt ein Winkel-Histogramm (Winkel in \texttt{rad}) \\ & $n:$ Anzahl Klassen oder Array mit der Aufteilung der Klassen \\
+\end{tabular}
+
+\subsection{Ansichten}
+\textbf{Subplots} \\
+\begin{tabular}{lll}
+	\texttt{subplot(m,n,p)} & $m:$ & Anzahl Zeilen \\
+							& $n:$ & Anzahl Spalten \\
+							& $p:$ & Nummer des ausgewählten Subplots \\
+\end{tabular} \\
+\textbf{Kamera} \\
+\begin{tabular}{ll}
+	\texttt{campos([x,y,z])} & Position der Kamera \\
+	\texttt{camtarget([x,y,z])} & 
+\end{tabular}
