@@ -1,0 +1,60 @@
+\subsection{Signale}
+
+\begin{tabular}{ll}
+	\texttt{p=polyfit(x,y,n)} & liefert n+1 Polynomkoeffizienten der nichtlinearen Kennlinie (Reihenfolge: $c_n, c_{n-1}, ..., c_0)$ \\
+	\texttt{f=polyval(p,x)} & liefert Polynomwerte an den Messpunkten x \\
+\end{tabular}
+
+
+\subsection{Systeme}
+
+\subsubsection{Modellierung}
+\begin{tabular}{|l|l|}  \hline
+	\multirow{3}{*}{Simulink}
+		 	& Modell in Simulink erstellen \\
+			& \texttt{[a b c d] = linmod2('SimulinkModell');} \\
+			& \texttt{sys = ss(a,b,c,d);} \\ \hline
+	\multirow{4}{*}{Transferfunktion}
+			& für Polynom $H(s) = \frac{a_n s^n + a_{n-1} s^{n-1} + ... + a_0}{b_m s^m + b_{m-1} s^{m-1} + ... + b_0}$: \\
+			& \texttt{sys = tf([$a_n$ $a_{n-1}$ ... $a_0$],[$b_m$ $b_{m-1}$ ... $b_0$])} \\ \cline{2-2}
+			& für Polynom $H(s) = \frac{(s-n_0) (s-n_1) ... (s-n_n)}{(s-p_0) (s-p_1) ... (s-p_m)}$: \\
+			& \texttt{sys = tf(poly([$n_0$,$n_1$, ... , $n_n$],poly([$p_0$,$p_1$, ... ,$p_m$])))}	\\ \hline
+\end{tabular} 
+
+\subsubsection{Funktionen}
+\begin{tabular}{ll}
+	\texttt{bode(sys)} & Bode Diagramm des Systems \\
+	\texttt{impulse(sys)} & Impulsantwort des Systems \\
+	\texttt{step(H)} & Schrittantwort des Systems \\
+	\texttt{pzmap(sys)} & Pol- / Nullstellendiagramm des Systems \\
+	\texttt{nicholsplot(sys)} & Nichols-Diagramm des Systems \\
+	\texttt{margin(sys)} &  Bode Diagramm mit Amplituden- und Phasenrand \\
+	\texttt{allmargin(sys)} & Berechnet Amplituden- und Phasenrand \\
+	\texttt{ltiview(sys)} & Darstellung verschiedener Diagramme (Bode, Nichols, ...) \\
+	\texttt{sisotool(sys)} & GUI zur Stabilisierung des Systems (Feedback, ...) \\
+	\texttt{minreal(sys)} & Gibt gekürzte UTF zurück \\
+\end{tabular}
+
+
+\subsubsection{Zusammenschalten von Systemen (SFD)}
+\begin{minipage}{12cm}
+\textbf{High-Level Funktionen:} \\
+\begin{tabular}{|l|l|} \hline
+	\multirow{2}{*}{Serieschaltung (*)}
+			& \texttt{serie\_sys = sys1 * sys2} \\
+			& \texttt{serie\_sys = series(sys1,sys2)} \\ \hline
+	\multirow{2}{*}{Parallelschaltung (+/-)}
+			& \texttt{parallel\_sys = sys1 + sys2} \\
+			& \texttt{parallel\_sys = parallel(sys1, sys2)} \\ \hline
+	Feedback & \texttt{feedback\_sys = feedback(sys1,sys2,+1)} \\ \hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{8cm}
+\textbf{Append / Connect:} \\
+	\texttt{sys = append(sys1,sys2,...)} \\
+	\texttt{inputs = [a]} \textit{\% Eingang von System a} \\
+	\texttt{outputs = [b]} \textit{\% Ausgang von System b} \\
+	\texttt{Q = [...]}  \textit{\% Matrix: Beschaltung der Systeme} \\
+	\texttt{sysc = connect(sys,Q,inputs,outputs)} \\
+\end{minipage}
+

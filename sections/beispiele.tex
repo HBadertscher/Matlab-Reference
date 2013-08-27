@@ -51,30 +51,3 @@ $$ F(s) = \frac{s-5}{s(s+2)^2} ~~~ \rightarrow ~~~ f(t) = -1.25 + 3.5t e^{-2t} +
   \newline
   $$ \frac{2}{x+2} + \frac{-8}{x+1} + \frac{6}{x} + k$$
 \end{minipage}
-
-
-%==============================================================================
-\subsection{LTI-Systeme}
-$$ H(s) = \frac{s \frac{L}{R}}{s^2 LC + s\cdot\frac{L}{R} + 1} ~~~ \Rightarrow
-~~~ \frac{1s + 0}{1s^2 + 2s + 1} $$ 
-$ R = 1\Omega ~~~~ L = 1H ~~~~ C = 1F $
-$~~~~\rightarrow~~~~$
-\verb?H = tf([1 0], [12 1])?
- \newline
-
-\begin{tabular}{ll}
-    \textbf{Bode-Diagramm} &
-    \verb?bode(H)?
-  \\
-    \textbf{Impulsantwort} &
-    \verb?impulse(H)?
-  \\
-    \textbf{Sprungantwort} &
-    \verb?step(H)?
-  \\
-    \textbf{Nullstellen- / Sprungstellendiagramm} &
-    \verb?pzmap(H)?
-  \\
-    \textbf{LTI-Eigenschftsdiagramm} &
-    \verb?ltiview(H)?
-\end{tabular}
